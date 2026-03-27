@@ -14,7 +14,7 @@
 /* ─── TEAM CARD ─────────────────────────────────────────────────── */
 
 .team-card {
-  background: var(--bg-card);
+  background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  background: var(--bg-secondary);
+  background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 14px;
@@ -118,7 +118,7 @@
 
 .color-hex-input {
   flex: 1;
-  font-family: 'Consolas', monospace;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
   font-size: 13px;
 }
 

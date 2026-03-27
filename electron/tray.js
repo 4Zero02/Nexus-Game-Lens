@@ -4,7 +4,7 @@ const path = require('path');
 let tray = null;
 
 function setupTray(app, mainWindow) {
-  const iconPath = path.join(__dirname, '..', 'assets', 'icon.png');
+  const iconPath = path.join(__dirname, '..', 'assets', 'favicon.ico');
   let icon;
   try {
     icon = nativeImage.createFromPath(iconPath);

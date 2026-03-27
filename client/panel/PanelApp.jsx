@@ -3,6 +3,7 @@ import ConnectionPage from './pages/ConnectionPage/ConnectionPage.jsx';
 import CS2HUDPage from './pages/CS2HUDPage/CS2HUDPage.jsx';
 import LoLHUDPage from './pages/LoLHUDPage/LoLHUDPage.jsx';
 import ValorantHUDPage from './pages/ValorantHUDPage/ValorantHUDPage.jsx';
+import TitleBar from './components/TitleBar.jsx';
 import UpdateBanner from './components/UpdateBanner.jsx';
 import './PanelApp.css';
 
@@ -51,6 +52,8 @@ export default function PanelApp() {
 
   return (
     <div className="panel-app">
+      <TitleBar />
+      <div className="panel-body">
       <aside className="panel-sidebar">
         <div className="sidebar-logo">
           <div className="logo-mark">N</div>
@@ -90,6 +93,7 @@ export default function PanelApp() {
         {activeTab === 'lol'        && <LoLHUDPage />}
         {activeTab === 'valorant'   && <ValorantHUDPage />}
       </main>
+      </div>
     </div>
   );
 }

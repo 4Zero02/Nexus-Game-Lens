@@ -12,7 +12,9 @@ function createWindow() {
     minWidth: 900,
     minHeight: 600,
     title: 'NGL — Nexus Game Lens',
-    backgroundColor: '#0f1117',
+    backgroundColor: '#0a0a0a',
+    frame: false,
+    transparent: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
@@ -57,6 +59,16 @@ app.on('window-all-closed', () => {
 
 app.on('before-quit', () => {
   app.isQuitting = true;
+});
+
+// IPC: window controls
+ipcMain.on('window:minimize', () => mainWindow?.minimize());
+ipcMain.on('window:maximize', () => {
+  if (mainWindow?.isMaximized()) mainWindow.unmaximize();
+  else mainWindow?.maximize();
+});
+ipcMain.on('window:close', () => {
+  if (!app.isQuitting) mainWindow?.hide();
 });
 
 // IPC: get local IP
