@@ -66,10 +66,6 @@
       "target": "nsis",
       "icon": "assets/favicon.ico"
     },
-    "linux": {
-      "target": "AppImage",
-      "icon": "assets/favicon.ico"
-    }
   },
   "pnpm": {
     "onlyBuiltDependencies": [
