@@ -1,0 +1,11 @@
+node_modules/
+dist/
+release/
+CLAUDE.md
+.claude/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.env
+.env.*

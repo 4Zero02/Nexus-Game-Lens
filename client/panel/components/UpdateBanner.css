@@ -1,0 +1,70 @@
+.update-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  color: var(--text-primary);
+}
+
+.update-banner--error {
+  background: rgba(229, 62, 62, 0.07);
+  border-color: rgba(229, 62, 62, 0.22);
+}
+
+.update-banner__text {
+  flex: 1;
+}
+
+.update-banner__actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-sm {
+  padding: 5px 14px;
+  font-size: 12px;
+}
+
+.update-banner__dismiss {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 5px 8px;
+  transition: color 0.14s;
+}
+
+.update-banner__dismiss:hover {
+  color: var(--text-primary);
+}
+
+.update-banner__progress-track {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.update-banner__progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.update-banner__percent {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+  min-width: 32px;
+  text-align: right;
+}

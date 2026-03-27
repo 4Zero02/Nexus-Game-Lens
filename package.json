@@ -1,0 +1,72 @@
+{
+  "name": "ngl",
+  "version": "1.0.0",
+  "description": "Nexus Game Lens — HUD desktop app for esports observer events",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"vite build --config vite.panel.config.js --watch\" \"vite build --config vite.output.config.js --watch\" \"wait-on dist/panel/index.html dist/output/index.html && electron .\"",
+    "build": "vite build --config vite.panel.config.js && vite build --config vite.output.config.js && electron-builder",
+    "build:publish": "vite build --config vite.panel.config.js && vite build --config vite.output.config.js && electron-builder --publish always",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Nexus Elite",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.1",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "electron-updater": "^6.8.3",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "chokidar": "^3.5.3",
+    "concurrently": "^8.2.2",
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1",
+    "eslint": "^8.56.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "socket.io-client": "^4.7.2",
+    "vite": "^5.0.11",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.nexuselite.ngl",
+    "productName": "NGL — Nexus Game Lens",
+    "directories": {
+      "output": "release"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "4Zero02",
+        "repo": "Nexus-Game-Lens"
+      }
+    ],
+    "files": [
+      "electron/**/*",
+      "server/**/*",
+      "dist/**/*",
+      "assets/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
+  }
+}

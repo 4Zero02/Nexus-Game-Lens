@@ -1,0 +1,225 @@
+.connection-page {
+  max-width: 700px;
+}
+
+/* ─── SERVER STATUS ROW ─────────────────────────────────────────── */
+
+.status-row-card {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+
+.status-row-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.status-row-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+.status-row-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.status-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.status-value.mono {
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+/* ─── GAME INTEGRATIONS ─────────────────────────────────────────── */
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.game-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  transition: border-color 0.14s;
+}
+
+.game-card--active {
+  border-color: var(--accent-border);
+  background: var(--accent-dim);
+}
+
+.game-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.game-tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.game-card--active .game-tag {
+  color: var(--accent);
+}
+
+.game-card-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.game-card-status {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.game-card-status.active {
+  color: var(--accent);
+}
+
+.game-card-status.stale {
+  color: var(--warning);
+}
+
+.game-card-time {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-family: 'Consolas', monospace;
+}
+
+/* ─── OBS URLS ──────────────────────────────────────────────────── */
+
+.url-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.url-entry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+
+.url-game-tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.url-value {
+  flex: 1;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--accent);
+  word-break: break-all;
+  min-width: 0;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-hover);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.14s;
+  white-space: nowrap;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.copy-btn.copied {
+  border-color: var(--accent-border);
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+/* ─── GSI SETUP ─────────────────────────────────────────────────── */
+
+.muted-text {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.gsi-help {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.gsi-help code {
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--accent);
+  font-family: 'Consolas', monospace;
+}
+
+.code-block {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 11px;
+  color: var(--text-secondary);
+  overflow-x: auto;
+  white-space: pre;
+  line-height: 1.65;
+}

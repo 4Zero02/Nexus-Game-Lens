@@ -1,0 +1,55 @@
+.valorant-page {
+  max-width: 620px;
+}
+
+.integration-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.inline-code {
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--accent);
+  font-family: 'Consolas', monospace;
+}
+
+.obs-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.coming-soon-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-bright);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.coming-soon-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.coming-soon-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 3px;
+}
+
+.coming-soon-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
