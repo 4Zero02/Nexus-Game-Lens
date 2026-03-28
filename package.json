@@ -1,6 +1,6 @@
 {
   "name": "ngl",
-  "version": "1.0.11",
+  "version": "2.0.0",
   "description": "Nexus Game Lens — HUD desktop app for esports observer events",
   "main": "electron/main.js",
   "scripts": {
@@ -14,19 +14,18 @@
   "author": "Nexus Elite",
   "license": "ISC",
   "dependencies": {
-    "@fontsource/ibm-plex-sans": "^5.2.8",
-    "@fontsource/jetbrains-mono": "^5.2.8",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "socket.io": "^4.7.2",
-    "tailwind-merge": "^3.5.0"
+    "socket.io": "^4.7.2"
   },
   "devDependencies": {
+    "@fontsource/ibm-plex-sans": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.27",
     "chokidar": "^3.5.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "concurrently": "^8.2.2",
     "electron": "^28.1.0",
     "electron-builder": "^24.9.1",
@@ -35,6 +34,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "socket.io-client": "^4.7.2",
+    "tailwind-merge": "^3.5.0",
     "tailwindcss": "^3.4.19",
     "vite": "^5.0.11",
     "wait-on": "^7.2.0"
@@ -50,7 +50,8 @@
       {
         "provider": "github",
         "owner": "4Zero02",
-        "repo": "Nexus-Game-Lens"
+        "repo": "Nexus-Game-Lens",
+        "releaseType": "release"
       }
     ],
     "files": [
