@@ -2,14 +2,6 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const { setupTray } = require('./tray');
 
-let setupAutoUpdater;
-try {
-  setupAutoUpdater = require('./updater').setupAutoUpdater;
-} catch (e) {
-  console.error('Auto-updater indisponível:', e.message);
-  setupAutoUpdater = () => {};
-}
-
 let mainWindow = null;
 
 function createWindow() {
@@ -52,7 +44,6 @@ app.whenReady().then(() => {
 
   createWindow();
   setupTray(app, mainWindow);
-  setupAutoUpdater(mainWindow);
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();

@@ -4,7 +4,6 @@ import CS2HUDPage from './pages/CS2HUDPage/CS2HUDPage.jsx';
 import LoLHUDPage from './pages/LoLHUDPage/LoLHUDPage.jsx';
 import ValorantHUDPage from './pages/ValorantHUDPage/ValorantHUDPage.jsx';
 import TitleBar from './components/TitleBar.jsx';
-import UpdateBanner from './components/UpdateBanner.jsx';
 import './PanelApp.css';
 
 const IconConnection = () => (
@@ -87,7 +86,6 @@ export default function PanelApp() {
       </aside>
 
       <main className="panel-content">
-        <UpdateBanner />
         {activeTab === 'connection' && <ConnectionPage />}
         {activeTab === 'cs2'        && <CS2HUDPage />}
         {activeTab === 'lol'        && <LoLHUDPage />}
