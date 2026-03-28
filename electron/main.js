@@ -2,6 +2,14 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const { setupTray } = require('./tray');
 
+// Prevent multiple instances — if another instance is already running,
+// focus the existing window instead of starting a new server on :8765
+const gotTheLock = app.requestSingleInstanceLock();
+
+if (!gotTheLock) {
+  app.quit();
+} else {
+
 let mainWindow = null;
 
 function createWindow() {
@@ -37,6 +45,14 @@ function createWindow() {
     }
   });
 }
+
+app.on('second-instance', () => {
+  if (mainWindow) {
+    if (mainWindow.isMinimized()) mainWindow.restore();
+    mainWindow.show();
+    mainWindow.focus();
+  }
+});
 
 app.whenReady().then(() => {
   // Start the Express server
@@ -82,3 +98,5 @@ ipcMain.handle('get-local-ip', () => {
   }
   return '127.0.0.1';
 });
+
+} // end of single instance lock
