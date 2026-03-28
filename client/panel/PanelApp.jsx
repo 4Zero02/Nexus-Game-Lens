@@ -81,7 +81,7 @@ export default function PanelApp() {
 
         <div className="sidebar-footer">
           <div className="sidebar-footer-dot" />
-          <span className="version-text">NGL v1.0.0</span>
+          <span className="version-text">NGL v1.0.1</span>
         </div>
       </aside>
 
