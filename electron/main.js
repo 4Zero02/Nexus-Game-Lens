@@ -1,9 +1,14 @@
-if (require('electron-squirrel-startup')) process.exit(0);
-
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const { setupTray } = require('./tray');
-const { setupAutoUpdater } = require('./updater');
+
+let setupAutoUpdater;
+try {
+  setupAutoUpdater = require('./updater').setupAutoUpdater;
+} catch (e) {
+  console.error('Auto-updater indisponível:', e.message);
+  setupAutoUpdater = () => {};
+}
 
 let mainWindow = null;
 
