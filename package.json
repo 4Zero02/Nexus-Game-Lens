@@ -20,8 +20,10 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cors": "^2.8.5",
+    "electron-squirrel-startup": "^1.0.1",
     "electron-updater": "^6.8.3",
     "express": "^4.18.2",
+    "fs-extra": "^11.3.4",
     "socket.io": "^4.7.2",
     "tailwind-merge": "^3.5.0"
   },
@@ -43,7 +45,8 @@
   },
   "build": {
     "appId": "com.nexuselite.ngl",
-    "productName": "NGL — Nexus Game Lens",
+    "productName": "NGL - Nexus Game Lens",
+    "executableName": "ngl",
     "directories": {
       "output": "release"
     },
@@ -59,7 +62,13 @@
       "server/**/*",
       "dist/**/*",
       "assets/**/*",
+      "node_modules/**/*",
       "package.json"
+    ],
+    "asarUnpack": [
+      "node_modules/electron-updater/**/*",
+      "node_modules/fs-extra/**/*",
+      "node_modules/graceful-fs/**/*"
     ],
     "win": {
       "target": "nsis",

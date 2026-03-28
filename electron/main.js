@@ -1,3 +1,5 @@
+if (require('electron-squirrel-startup')) process.exit(0);
+
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const { setupTray } = require('./tray');
