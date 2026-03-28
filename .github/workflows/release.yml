@@ -19,7 +19,9 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          del package-lock.json 2>nul || true
+          npm install
 
       - name: Build and publish
         run: npm run build:publish
