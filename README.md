@@ -91,18 +91,18 @@ Após configurar, reinicie o CS2. O painel do NGL mostrará CS2 como **Conectado
 ### Pré-requisitos
 
 - [Node.js](https://nodejs.org) 20+
-- [pnpm](https://pnpm.io) 10+
+- npm (incluído com Node.js)
 
 ### Instalação
 
 ```bash
-pnpm install
+npm install
 ```
 
 ### Modo desenvolvimento
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 Inicia o Vite em modo watch para o painel e os overlays, depois abre o Electron automaticamente.
@@ -110,10 +110,10 @@ Inicia o Vite em modo watch para o painel e os overlays, depois abre o Electron 
 ### Build
 
 ```bash
-pnpm build
+npm run build
 ```
 
-Gera o instalador em `release/`.
+Gera o instalador Windows em `release/`.
 
 ---
 
@@ -121,12 +121,12 @@ Gera o instalador em `release/`.
 
 1. Atualize o `"version"` no `package.json`
 2. Commit e push das alterações
-3. Crie e envie a tag:
+3. Crie e envie a tag (versão deve bater com `package.json`):
    ```bash
-   git tag v1.1.0
-   git push origin v1.1.0
+   git tag v2.0.1
+   git push origin v2.0.1
    ```
-4. O GitHub Actions cria automaticamente o release com os instaladores Windows e Linux
+4. O GitHub Actions cria automaticamente o release com o instalador Windows
 
 ---
 
@@ -142,7 +142,7 @@ Gera o instalador em `release/`.
 | Componentes UI | shadcn/ui (base) |
 | Estilização HUD | CSS Modules |
 | Empacotamento | electron-builder |
-| Package manager | pnpm |
+| Package manager | npm |
 
 ---
 
@@ -150,7 +150,7 @@ Gera o instalador em `release/`.
 
 ```
 ngl/
-├── electron/         ← processo principal, preload, tray, auto-update
+├── electron/         ← processo principal, preload, tray
 ├── server/           ← Express + Socket.io, integrações por jogo
 │   ├── gsi/          ← parser e coordenadas do CS2
 │   └── integrations/ ← cs2.js, lol.js, valorant.js
