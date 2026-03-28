@@ -19,10 +19,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        shell: bash
-        run: |
-          rm -f package-lock.json
-          npm install
+        run: npm install --force
 
       - name: Build and publish
         run: npm run build:publish
