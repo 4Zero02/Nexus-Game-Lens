@@ -14,19 +14,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 10
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
+          cache: npm
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: npm ci
 
       - name: Build and publish
-        run: pnpm run build:publish
+        run: npm run build:publish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
